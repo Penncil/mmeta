@@ -4,13 +4,12 @@
 
 ## Important information for developers/ maintainers
 * Current maintainer: Jiajie Chen <jiajie.chen@pennmedicine.upenn.edu>
-* Lastest release version: V3.0.0
 
 * Tips for new developers/ maintainers
     * There are 3 repositories hosting the package: `Penncil/mmeta_dev`, `Penncil/mmeta`, `CRAM`.  Please refer to section `Repositories` for details.
     * The latest design doc [`design_doc/V3.0.0/design_doc_mmeta_3.0.md`](https://github.com/Penncil/mmeta-dev/blob/design_doc/V3.0.0/design_doc_mmeta_3.0.md) desribes the design and structure of the package.The [`naming convention document`](https://github.com/Penncil/mmeta-dev/blob/design_doc/tech_docs/naming_convention.md) may also help developers undertand the source codes.
-    * The [`Penncil/mmeta_dev:design_doc/work_log.md`]() may help the new developer learn the evolution and important events of the pacakge development quickly. 
-    * The folder [`Penncil/mmeta_dev:change_request]() saves the change requests forms describing the reasons, changes and deliverables for major changes. The change requests forms also include the links to related documents such as test reports, code review and important communications/email/meeting notes.  Those documents may help new developers/maintainers undertand the pacakge development. 
+    * The [`Penncil/mmeta_dev:design_doc/work_log.md`](https://github.com/Penncil/mmeta-dev/blob/change_request/work_log.md) may help the new developer learn the evolution and important events of the pacakge development quickly. 
+    * The folder [`Penncil/mmeta_dev:change_request`](https://github.com/Penncil/mmeta-dev/tree/change_request/change_request) saves the change requests forms describing the reasons, changes and deliverables for major changes. The change requests forms also include the links to related documents such as test reports, code review and important communications/email/meeting notes.  Those documents may help new developers/maintainers understand the pacakge development. 
     * If you are not familiar with Git and/or R package development, please go to the section `Learning resources` for learning resorces.
     * To make the software development sustainable, please follow the recommended workflow. See  section `Recommended workflow`. 
     * Please make sure the `Penncil/mmeta_dev:main`, `Penncil/mmeta:main` and `CRAN` are synchronized .
@@ -24,7 +23,7 @@
         * Update maintainer email in DESCRIPTION file.
         * Increase version number by 0.01.
         * Release a new version on all repositories: `Penncil/mmeta_dev`, `Penncil/mmeta`, `CRAM`
-        * Add the information about the change in [`Penncil/mmeta_dev:design_doc/work_log.md`]():
+        * Add the information about the change in [`Penncil/mmeta_dev:design_doc/work_log.md`](https://github.com/Penncil/mmeta-dev/blob/change_request/work_log.md):
             * 20XX-XX-XX: release new version X.X.X to change maintainer from XXX to XXX
 
 
@@ -56,10 +55,10 @@ Four repositories host the mmeta package:
 
 
 
-## Onboarding guide for new maintainers
+## Onboarding guide for new maintainers/deveopers
 
 ### For developers/maintainers who are not going to use Git for development
-Creating local git repository for version control during the development is highly recommended. However, if you are not going to do that, you can also use Github web to download/upload files from/to the remote GitHub repositories. 
+Creating local git repository for version control during the development is highly recommended. However, if you are not going to do that, you can also use Github web to download the files as zip files from GitHub repository `Penncil/mmeta_dev` via web interface. and edit the codes/documents in local workspace. After the development is complete, you can also upload the files to `Penncil/mmeta_dev` via web interface.  
 
 ![Repositories communication for non-git user](https://github.com/Penncil/mmeta-dev/blob/design_doc/image/repositories_non_git_users.jpg)
 
@@ -73,58 +72,152 @@ To upload files, you can go to [`Penncil/mmeta_dev`](https://github.com/Penncil/
 
 
 
+#### Create new branch
+To create or delete branch in GitHub via web interface, please read the following instruction
+* [Creating and deleting branches within your repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository)
+
+
+#### Merging a pull request
+Merge a pull request into the upstream branch when work is completed. Anyone with push access to the repository can complete the merge.please read the following instruction
+* [Merging a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request)
+
+
 
 
 
 ### For developers/maintainers who are going to use Git for development 
+* It is a good practice to use Git/GitHub for development for several reasons. 
+    * It is easier to track changes in your code across versions.
+    * By using GitHub, you make it easier to get excellent documentation. Their help section and guides have articles for nearly any topic related to git that you can think of.
+ 
+* To use Git for development, the new new maintainers/deveopers need to create local repository.
+
 ![Repositories communication for Git user](https://github.com/Penncil/mmeta-dev/blob/design_doc/image/repositories.jpg)
-#### 1. Local setup and clone the  repositories
+
+#### Create local repository and clone
+
+* step 0: local setup: Please refer to document [`Git tutorial`]()
 
 * step 1: create working directory <working_direcotory>  for the package, such as `d:/user/mmeta`. 
 
-* step 2: add the two remote repositories by running the following git command in command line 
+* step 2: add the two remote repositories by running the following git command in shell command line 
 ```
 cd <working_direcotory>
-git remote add public https://github.com/Penncil/mmeta.git
-git remote add private https://github.com/Penncil/mmeta_dev.git
+git remote add release https://github.com/Penncil/mmeta.git
+git remote add origin https://github.com/Penncil/mmeta_dev.git
 ```
-* step 3: clone the private repository run the following commands in terminal
+Here, we refer the remote repository `Penncil/mmeta_dev` as `origin` and remote repository `Penncil/mmeta` as `release`
+* step 3: clone the remote `Penncil/mmeta_dev` repository run the following commands in terminal:
+
 ```
-git clone private 
+cd <working_direcotory>
+git clone release 
 ```
-#### 2. Switch branches
+#### Switch branches
+To switch branch, you can run the following commands in terminal:
+```
+git checkout <branch_name>
+```
+
+#### Create new branches
+To create branch, you can run the following commands in terminal:
+```
+git checkout -b <new_branch_name>
+```
 
 
-#### 3. Push to remote repositories
+#### Pull changes from remote repositories
+To pull changes from remote repositories for specific branch, you can run the following commands in terminal:
+```
+git checkout -b <branch_name>
+git pull
+```
+
+#### Push changes to remote repositories
+The 'push' means uploading the changes to remote repositories. If you would like push the change of branch of <branch_name>, such as `main` of repository `Penncil/mmeta_dev` (refered as `origin`), you can run the following commands in terminal:
+```
+git push origin:<branch_name>
+```
+
+After the development is complete in `Penncil/mmeta_dev`, you can push the chanages in main branch to repository `Penncil/mmeta` by the following commands:
+```
+git checkout main
+git push release:main
+```
 
 
+#### Merch branch
 
+```
+git checkout main
+git merge dev
+```
 
+#### More information about Git/GitHub
+* If you would like to get more information about Git/GitHub, please refer to the document [`Git tutorial`]()
+* If you don't like to use shell command, most of the operations can be done via GitHub Desktop app. Rstudio and VS Code can also work with Git. Please refer to the document [`Git tutorial`]() for more information.
 
 
 ## Recommended workflow
 
-### Release new version
-* Step 1：Push all updates to `dev` branch on `Penncil/mmeta_dev`
-* Step 2: merge `dev` branch to `main` branch on `Penncil/mmeta_dev`
-* Step 3: push update to `Penncil/mmeta`
-```
-git push public main
+### Step 1: prepare for the change
 
-```
+* You can skip this step for very minor changes, such as chaning the maintainer.
+* Create change request form files ` ` in `Penncil/mmeta_dev:change_requst/change_requst`. The form should include the following information:
+    * reasons
+    * plans of the change
+    * start date
+    * requster/assignee
+    * paraent commit
+* For major refactor or re-design, please write a design documents first and save as `design_doc_vX.X.X.md` at `Penncil/mmeta_dev:design_doc/VX.X.X`
 
-* Step 4: release on `Penncil/mmeta`
-Release new version : 
-https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository
+### Step 2: create new branch for development
+* For minor change, you can also skip this step and commit the change to main branch directly.
+* Creating new branch for development 
 
-* Step 5: release on CRAN
-* Step 6: the information about the change in work_log:
+### Step 3: finish development in local workspace
+* You can start to work on the development such as editing the functions.
+* After you complete the development, you need to commit the changes to local repository. 
+
+### Step 4: pre-build test
+
+* The step can be skipped for minor changes.
+
+### Step 5: R CMD check
+
+* Push/upload the check log or test reports to `Penncil/mmeta_dev:chek_and_test`
+
+### Step 6: merge to main
+
+* For minor change, you can also skip this step because all the changes have been commited to main branch directly.
+
+### Step 7 synchronize to `Penncil/mmeta`
+* `Penncil/mmeta_dev` and `Penncil/mmeta`
+
+
+
+### Step 8: release
+* Release to `Penncil/mmeta`. 
+
+
+* Release to `CRAN`
+
+
+
+### Step 9: wrap up
+* Update change request forms:
+    * complete date
+    * last commit
+    * deliverables
+* Add a brief summary about the change in [`Penncil/mmeta_dev:design_doc/work_log.md`](https://github.com/Penncil/mmeta-dev/blob/change_request/work_log.md) .
+
+
 
 ## Learning resources
 * GitHub tutorials
 
 ## Related papers
-All the papers can be found at [`Penncil/mmeta_dev:design_doc/paper`]()
+All the papers can be found at [`Penncil/mmeta_dev:design_doc/paper`](https://github.com/Penncil/mmeta-dev/tree/design_doc/paper)
 1.	Luo, S., Chen, Y., Su, X., Chu, H., (2014). mmeta: An R Package for Multivariate Meta-Analysis. Journal of Statistical Software, 56(11), 1-26.
 2.	Chen, Y., Luo, S., (2011a). A Few Remarks on "Statistical Distribution of the Difference of Two Proportions' by Nadarajah and Kotz, Statistics in Medicine 2007; 26(18):3518-3523" . Statistics in Medicine, 30(15), 1913-1915.
 3.	Chen, Y., Chu, H., Luo, S., Nie, L., & Chen, S. (2015). Bayesian analysis on meta-analysis of case-control studies accounting for within-study correlation. Statistical methods in medical research, 24(6), 836-855.
