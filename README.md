@@ -38,7 +38,7 @@ Four repositories host the mmeta package:
         * `change_request`: change request forms, work_log
         * `design_doc`: design documents, naming convention, archetecture and paper 
         * `change_and_test`: log for RCMD check , unit test and UAT, ect.
-    * documents related to the packages: design documents, change request forms, tickets and test results, ect.
+    * documents related to the packages: design documents, change request forms, code review comments and test results, ect.
 
 * `Penncil/mmeta`: https://github.com/Penncil/mmeta
     * public GitHub repository for release
