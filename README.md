@@ -181,11 +181,12 @@ git merge dev
 
 ### Step 4: pre-build test
 
-* The step can be skipped if there is no changes for low level computation modules.
+* The step can be skipped if there is no major change.
+
 * The pre-build test include the following components:
-    * unit test
-    * user accptance test:
-    * edge cases test:
+    * unit test: test the low level computation functions
+    * user accptance test: test whether the exported functions can work.
+    * edge cases test: test whether the error messges can be delivered when input is illegal.
 
 ### Step 5: R CMD check
 
