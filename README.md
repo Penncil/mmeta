@@ -96,7 +96,7 @@ Merge a pull request into the upstream branch when work is completed. Anyone wit
 
 #### Create local repository and clone
 
-* step 0: local setup: Please refer to document [`Git tutorial`]()
+* step 0: local setup: Please refer to document [`Git tutorial`](https://github.com/Penncil/mmeta-dev/blob/design_doc/tech_docs/Git_GitHub.md)
 
 * step 1: create working directory <working_direcotory>  for the package, such as `d:/user/mmeta`. 
 
@@ -154,8 +154,8 @@ git merge dev
 ```
 
 #### More information about Git/GitHub
-* If you would like to get more information about Git/GitHub, please refer to the document [`Git tutorial`]()
-* If you don't like to use shell command, most of the operations can be done via GitHub Desktop app. Rstudio and VS Code can also work with Git. Please refer to the document [`Git tutorial`]() for more information.
+* If you would like to get more information about Git/GitHub, please refer to the document [`Git tutorial`](https://github.com/Penncil/mmeta-dev/blob/design_doc/tech_docs/Git_GitHub.md)
+* If you don't like to use shell command, most of the operations can be done via GitHub Desktop app. Rstudio and VS Code can also work with Git. Please refer to the document [`Git tutorial`](https://github.com/Penncil/mmeta-dev/blob/design_doc/tech_docs/Git_GitHub.md) for more information.
 
 
 ## Recommended workflow
@@ -181,7 +181,11 @@ git merge dev
 
 ### Step 4: pre-build test
 
-* The step can be skipped for minor changes.
+* The step can be skipped if there is no changes for low level computation modules.
+* The pre-build test include the following components:
+    * unit test
+    * user accptance test:
+    * edge cases test:
 
 ### Step 5: R CMD check
 
@@ -189,16 +193,20 @@ git merge dev
 
 ### Step 6: merge to main
 
+* After the development version has passed all the tests, the developers/maintainers can merge the `dev` branch with `main` branch in `Penncil/mmeta_dev`.
 * For minor change, you can also skip this step because all the changes have been commited to main branch directly.
 
 ### Step 7 synchronize to `Penncil/mmeta`
-* `Penncil/mmeta_dev` and `Penncil/mmeta`
+* Push or upload all the changes in `Penncil/mmeta_dev:main` to `Penncil/mmeta` via the following git command or via web interface. 
+    ```
+    git checkout main
+    git push release:main
 
-
+    ```
+* Delete the `README.md` file in `Penncil/mmeta:main`
 
 ### Step 8: release
-* Release to `Penncil/mmeta`. 
-
+* Release the main branch to `Penncil/mmeta` following this [instruction](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository)
 
 * Release to `CRAN`
 
@@ -210,11 +218,13 @@ git merge dev
     * last commit
     * deliverables
 * Add a brief summary about the change in [`Penncil/mmeta_dev:design_doc/work_log.md`](https://github.com/Penncil/mmeta-dev/blob/change_request/work_log.md) .
+* Document important emails/communication/takeaways.
+
 
 
 
 ## Learning resources
-* GitHub tutorials
+* [GitHub tutorials](https://github.com/Penncil/mmeta-dev/blob/design_doc/tech_docs/Git_GitHub.md)
 
 ## Related papers
 All the papers can be found at [`Penncil/mmeta_dev:design_doc/paper`](https://github.com/Penncil/mmeta-dev/tree/design_doc/paper)
