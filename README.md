@@ -143,7 +143,7 @@ git push origin:<branch_name>
 After the development is complete in `Penncil/mmeta-dev`, you can push the chanages in main branch to repository `Penncil/mmeta` by the following commands:
 ```
 git checkout main
-git push release:main
+git push release main --force
 ```
 
 
