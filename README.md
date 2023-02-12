@@ -14,7 +14,7 @@
     * To make the software development sustainable, please follow the recommended workflow. See  section `Recommended workflow`. 
     * Please make sure the `Penncil/mmeta-dev:main`, `Penncil/mmeta:main` and `CRAN` are synchronized .
     * To learn how to download/upload source codes/documents, please read the section `Onboarding guide for new maintainers`.
-    * If you woudl lke to edit this `README.md` and `.gitignore` file, please use GitHub web interface because `Penncil/mmeta-dev:main`, `Penncil/mmeta:main` 
+    * If you woudl lke to edit this `README.md` and `.gitIg` file, please use GitHub web interface because `Penncil/mmeta-dev:main`, `Penncil/mmeta:main` . 
 
 
 * Tips for developers/ maintainers who are going to sign out:
