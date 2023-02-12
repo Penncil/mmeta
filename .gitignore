@@ -49,3 +49,6 @@ vignettes/*.pdf
 
 # log file for R CMD check
 *.log
+
+##
+README.md
