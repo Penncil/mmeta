@@ -14,6 +14,7 @@
     * To make the software development sustainable, please follow the recommended workflow. See  section `Recommended workflow`. 
     * Please make sure the `Penncil/mmeta-dev:main`, `Penncil/mmeta:main` and `CRAN` are synchronized .
     * To learn how to download/upload source codes/documents, please read the section `Onboarding guide for new maintainers`.
+    * If you woudl lke to edit this `README.md` file, please use GitHub web interface. 
 
 
 * Tips for developers/ maintainers who are going to sign out:
@@ -157,6 +158,7 @@ git merge dev
 #### More information about Git/GitHub
 * If you would like to get more information about Git/GitHub, please refer to the document [`Git tutorial`](https://github.com/Penncil/mmeta-dev/blob/design_doc/tech_docs/Git_GitHub.md)
 * If you don't like to use shell command, most of the operations can be done via GitHub Desktop app. Rstudio and VS Code can also work with Git. Please refer to the document [`Git tutorial`](https://github.com/Penncil/mmeta-dev/blob/design_doc/tech_docs/Git_GitHub.md) for more information.
+* If you woudl lke to edit this `README.md` file, please use GitHub web interface. 
 
 
 ## Recommended workflow
@@ -221,6 +223,8 @@ git merge dev
     * deliverables
 * Add a brief summary about the change in [`Penncil/mmeta-dev:design_doc/work_log.md`](https://github.com/Penncil/mmeta-dev/blob/change_request/work_log.md) .
 * Document important emails/communication/takeaways.
+* If you woudl lke to edit this `README.md` file, please use GitHub web interface. 
+
 
 
 
