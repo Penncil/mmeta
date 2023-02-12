@@ -51,5 +51,5 @@ vignettes/*.pdf
 *.log
 
 ##
-README.md
 .gitignore
+README.md
